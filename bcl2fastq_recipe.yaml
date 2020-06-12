@@ -1,0 +1,70 @@
+- name: bcl2fastq
+  version: 2.20.0.422
+  build_type: custom
+  build_args:
+    prereq_args:
+      sha256: 8733f3bf3a39bc0678613e2fe95869c97ea94502c882ffe39521984466f4a907
+      url: file:/.mounts/labs/gsi/src/bcl2fastq/bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm
+    prereq_type: download
+    steps:
+      - command:
+        - /bin/bash
+        - -c
+        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time 
+--verbose"
+      - command:
+        - rsync
+        - -av
+        - usr/local/
+        - '{output_dir}'
+  system_depends:
+    - name: rpm2cpio
+      required_at: build
+    - name: cpio
+      required_at: build - name: bcl2fastq
+  version: 2.18.0.12
+  build_type: custom
+  build_args:
+    prereq_args:
+      sha256: 6ebe8a38d80f586c98078e2a15880b772f955182eb6a741fc76331c483d18522
+      url: file:/.mounts/labs/gsi/src/bcl2fastq/bcl2fastq2-v2.18.0.12-Linux-x86_64.rpm
+    prereq_type: download
+    steps:
+      - command:
+        - /bin/bash
+        - -c
+        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time 
+--verbose"
+      - command:
+        - rsync
+        - -av
+        - usr/local/
+        - '{output_dir}'
+  system_depends:
+    - name: rpm2cpio
+      required_at: build
+    - name: cpio
+      required_at: build - name: bcl2fastq
+  version: 1.8.4
+  build_type: custom
+  build_args:
+    prereq_args:
+      sha256: b7c802e3a24fec07a1fbb583fa273ee64cf2a0fad1830f3feb638b7232be268e
+      url: file:/.mounts/labs/gsi/src/bcl2fastq/bcl2fastq-1.8.4-Linux-x86_64.rpm
+    prereq_type: download
+    steps:
+      - command:
+        - /bin/bash
+        - -c
+        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time 
+--verbose"
+      - command:
+        - rsync
+        - -av
+        - usr/local/
+        - '{output_dir}'
+  system_depends:
+    - name: rpm2cpio
+      required_at: build
+    - name: cpio
+      required_at: build
