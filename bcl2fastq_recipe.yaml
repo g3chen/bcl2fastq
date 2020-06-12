@@ -1,3 +1,4 @@
+# bcl2fastq/2.20.0.422
 - name: bcl2fastq
   version: 2.20.0.422
   build_type: custom
@@ -10,8 +11,7 @@
       - command:
         - /bin/bash
         - -c
-        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time 
---verbose"
+        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time --verbose"
       - command:
         - rsync
         - -av
@@ -21,7 +21,10 @@
     - name: rpm2cpio
       required_at: build
     - name: cpio
-      required_at: build - name: bcl2fastq
+      required_at: build
+
+# bcl2fastq/2.18.0.12
+- name: bcl2fastq
   version: 2.18.0.12
   build_type: custom
   build_args:
@@ -33,8 +36,7 @@
       - command:
         - /bin/bash
         - -c
-        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time 
---verbose"
+        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time --verbose"
       - command:
         - rsync
         - -av
@@ -44,7 +46,10 @@
     - name: rpm2cpio
       required_at: build
     - name: cpio
-      required_at: build - name: bcl2fastq
+      required_at: build
+
+# bcl2fastq/1.8.4
+- name: bcl2fastq
   version: 1.8.4
   build_type: custom
   build_args:
@@ -56,8 +61,7 @@
       - command:
         - /bin/bash
         - -c
-        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time 
---verbose"
+        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time --verbose"
       - command:
         - rsync
         - -av
@@ -68,3 +72,33 @@
       required_at: build
     - name: cpio
       required_at: build
+
+# bcl2fastq-jail/3.0.0
+- name: bcl2fastq-jail
+  version: 3.0.0
+  build_type: autotools
+  build_args:
+    cwd: wrapper
+    prereq_type: git
+    prereq_args:
+      url: https://github.com/oicr-gsi/bcl2fastq.git
+      tag: v3.0.0
+  system_depends:
+  - name: libgzstream-dev
+  - name: libjsoncpp-dev
+
+# This version is a development version used only during testing. Do not use
+# for production. You are allowed to change this module and rebuild it.
+# bcl2fastq-jail/dev
+- name: bcl2fastq-jail
+  version: dev
+  build_type: autotools
+  build_args:
+    cwd: wrapper
+    prereq_type: git
+    prereq_args:
+      url: https://github.com/oicr-gsi/bcl2fastq.git
+      commit: 85daa2c1b1f3b6b0114039c1d31097561075d2ae
+  system_depends:
+  - name: libgzstream-dev
+  - name: libjsoncpp-dev
