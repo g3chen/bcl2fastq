@@ -27,6 +27,7 @@ workflow bcl2fastq {
     Array[Sample]+ samples
     String runDirectory
     Int timeout = 40
+    String docker = "g3chen/bcl2fastq:1.0"
   }
   parameter_meta {
     basesMask: "An Illumina bases mask string to use. If absent, the one written by the instrument will be used."
@@ -36,6 +37,7 @@ workflow bcl2fastq {
     runDirectory: "The path to the instrument's output directory."
     samples: "The information about the samples. Tname of the sample which will determine the output file prefix. The list of barcodes in the format i7-i5 for this sample. If multiple barcodes are provided, they will be merged into a single output."
     timeout: "The maximum number of hours this workflow can run for."
+    docker: "Docker container to run the workflow in"
   }
   meta {
     author: "Andre Masella"
@@ -56,7 +58,8 @@ workflow bcl2fastq {
       modules = modules,
       runDirectory = runDirectory,
       samples = object { samples: samples },
-      timeout = timeout
+      timeout = timeout,
+      docker = docker
   }
   output {
     Array[Output]+ fastqs = process.out.outputs
@@ -82,6 +85,7 @@ task process {
     String temporaryDirectory = "."
     Int threads = 8
     Int timeout = 40
+    String docker
   }
   parameter_meta {
     basesMask: "An Illumina bases mask string to use. If absent, the one written by the instrument will be used."
@@ -100,6 +104,7 @@ task process {
     temporaryDirectory: "A directory where bcl2fastq can dump massive amounts of garbage while running."
     threads: "The number of processing threads to use when running BCL2FASTQ"
     timeout: "The maximum number of hours this workflow can run for."
+    docker: "Docker container to run the workflow in"
   }
   meta {
     output_meta: {
@@ -129,7 +134,8 @@ task process {
     Outputs out = read_json("outputs.json")
   }
   runtime {
-    memory: "~{memory}G"
+  	docker:  "~{docker}"
+    memory:  "~{memory}G"
     modules: "~{modules}"
     timeout: "~{timeout}"
   }
