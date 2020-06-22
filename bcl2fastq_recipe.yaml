@@ -86,3 +86,18 @@
   system_depends:
   - name: libgzstream-dev
   - name: libjsoncpp-dev
+
+# This version is a development version used only during testing. Do not use for production. You 
+# are allowed to change this module and rebuild it.
+- name: bcl2fastq-jail
+  version: dev
+  build_type: autotools
+  build_args:
+    cwd: wrapper
+    prereq_type: git
+    prereq_args:
+      url: https://github.com/oicr-gsi/bcl2fastq.git
+      commit: 85daa2c1b1f3b6b0114039c1d31097561075d2ae
+  system_depends:
+  - name: libgzstream-dev
+  - name: libjsoncpp-dev
