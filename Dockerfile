@@ -7,6 +7,9 @@ USER root
 
 # move in the yaml to build modulefiles from
 COPY bcl2fastq_recipe.yaml /modulator/code/gsi/recipe.yaml
+COPY /home/ubuntu/Downloads/sample_data/build_bcl2fastq/bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm /build_files/bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm
+COPY /home/ubuntu/Downloads/sample_data/build_bcl2fastq/bcl2fastq2-v2.18.0.12-Linux-x86_64.rpm /build_files/bcl2fastq2-v2.18.0.12-Linux-x86_64.rpm
+COPY /home/ubuntu/Downloads/sample_data/build_bcl2fastq/bcl2fastq-1.8.4-Linux-x86_64.rpm /build_files/bcl2fastq-1.8.4-Linux-x86_64.rpm
 
 # install the programs required for the yaml build
 RUN apt-get -m update && apt-get install -y rpm2cpio cpio
