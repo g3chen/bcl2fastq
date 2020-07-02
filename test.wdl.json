@@ -8,10 +8,9 @@
           "name": "Horizon_PoolA_Rep1"
       }
   ],
-  "bcl2fastq.mismatches": "1",
+  "bcl2fastq.mismatches": 1,
   "bcl2fastq.lanes": [
       1
   ],
-  "bcl2fastq.runDirectory": "/data/test_bcl2fastq",
+  "bcl2fastq.runDirectory": "/data/test_bcl2fastq"
 }
-
