@@ -1,0 +1,64 @@
+{
+  "bcl2fastq.lanes": [
+    1
+  ],
+  "bcl2fastq.mismatches": 1,
+  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/3.0.0",
+  "bcl2fastq.runDirectory": "/data/test_bcl2fastq_hiseq",
+  "bcl2fastq.samples": [
+    {
+      "barcodes": [
+        "CGATGT"
+      ],
+      "name": "NA12878_A002"
+    },
+    {
+      "barcodes": [
+        "TGACCA"
+      ],
+      "name": "NA12878_A004"
+    },
+    {
+      "barcodes": [
+        "ACAGTG"
+      ],
+      "name": "NA12878_A005"
+    },
+    {
+      "barcodes": [
+        "GCCAAT"
+      ],
+      "name": "NA12878_A006"
+    },
+    {
+      "barcodes": [
+        "CAGATC"
+      ],
+      "name": "NA12878_A007"
+    },
+    {
+      "barcodes": [
+        "CTTGTA"
+      ],
+      "name": "NA12878_A012"
+    },
+    {
+      "barcodes": [
+        "AGTCAA"
+      ],
+      "name": "NA12878_A013"
+    },
+    {
+      "barcodes": [
+        "AGTTCC"
+      ],
+      "name": "NA12878_A014"
+    },
+    {
+      "barcodes": [
+        "ATGTCA"
+      ],
+      "name": "NA12878_A015"
+    }
+  ]
+}
