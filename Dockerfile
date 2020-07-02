@@ -27,10 +27,14 @@ COPY .bashrc /home/ubuntu/.bashrc
 
 ENV BCL2FASTQ_JAIL_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-jail-3.0.0"
 ENV BCL2FASTQ_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-2.20.0.422"
+ENV PYTHON_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/python-3.6"
+ENV BARCODEX_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/barcodex-1.0.5"
 
-ENV PATH="/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-2.20.0.422/bin:/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-jail-3.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-ENV MANPATH="/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-jail-3.0.0/share/man"
-ENV LD_LIBRARY_PATH="/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-2.20.0.422/lib"
+ENV PATH="/modules/gsi/modulator/sw/Ubuntu18.04/barcodex-1.0.5/bin:/modules/gsi/modulator/sw/Ubuntu18.04/python-3.6/bin:/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-2.20.0.422/bin:/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-jail-3.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ENV MANPATH="/modules/gsi/modulator/sw/Ubuntu18.04/python-3.6/share/man:/usr/share/man:/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-jail-3.0.0/share/man"
+ENV LD_LIBRARY_PATH="/modules/gsi/modulator/sw/Ubuntu18.04/barcodex-1.0.5/lib:/modules/gsi/modulator/sw/Ubuntu18.04/python-3.6/lib:/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-2.20.0.422/lib"
 ENV LD_RUN_PATH="/modules/gsi/modulator/sw/Ubuntu18.04/bcl2fastq-2.20.0.422/libexec"
+ENV PKG_CONFIG_PATH="/modules/gsi/modulator/sw/Ubuntu18.04/python-3.6/lib/pkgconfig"
+ENV PYTHONPATH="/modules/gsi/modulator/sw/Ubuntu18.04/barcodex-1.0.5/lib/python3.6/site-packages:/modules/gsi/modulator/sw/Ubuntu18.04/python-3.6/lib/python3.6/site-packages"
 
 CMD /bin/bash
