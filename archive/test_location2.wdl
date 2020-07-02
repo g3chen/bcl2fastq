@@ -4,7 +4,7 @@ workflow test_location {
 
 task find_tools {
     command <<<
-        ls -l /data/test_bcl2fastq_hiseq
+        ls -l /data/test_bcl2fastq_tiny
         echo "@@@@@@@@@@@@@"
     >>>
     output{
