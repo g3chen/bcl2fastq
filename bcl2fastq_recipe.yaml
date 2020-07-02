@@ -62,17 +62,69 @@
   - name: libgzstream-dev
   - name: libjsoncpp-dev
 
-# This version is a development version used only during testing. Do not use for production. You 
-# are allowed to change this module and rebuild it.
-#- name: bcl2fastq-jail
-#  version: dev
-#  build_type: autotools
-#  build_args:
-#    cwd: wrapper
-#    prereq_type: git
-#    prereq_args:
-#      url: https://github.com/oicr-gsi/bcl2fastq.git
-#      commit: 85daa2c1b1f3b6b0114039c1d31097561075d2ae
-#  system_depends:
-#  - name: libgzstream-dev
-#  - name: libjsoncpp-dev
+# python/3.6
+- name: python
+  version: 3.6
+  build_type: custom
+  build_args:
+    steps:
+    - build_type: autotools
+      build_args:
+       prereq_args:
+         prereq_args:
+           md5: 51aac91bdf8be95ec0a62d174890821a
+           url: https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tar.xz
+         prereq_type: download
+       prereq_type: extract
+       configure:
+        - --enable-shared
+        - --enable-ipv6
+        - --enable-loadable-sqlite-extensions
+        - --enable-optimizations
+        - --with-dbmliborder=bdb:gdbm
+        - --with-computed-gotos
+        - --with-ensurepip=yes
+        - --with-system-expat
+        - --with-system-libmpdec
+        - --with-system-ffi
+    - build_args: # YAML is included so that find-modules will work correctly in the built Python
+        package: PyYAML
+        version: 5.1.2
+      build_type: pip
+      scan_dirs: true
+    - build_args:
+        package: pip
+        version: 19.0.3
+      build_type: pip
+      scan_dirs: true
+    - command: [ "ln", "-s", "/usr/share/pyshared/lsb_release.py", "{output_dir}/lib/python3.6/lsb_release.py" ]
+  system_depends:
+  - name: libmpdec-dev
+  - name: libreadline-dev
+    permitted_os: ["Ubuntu18.04"]
+  - name: libreadline6-dev
+    permitted_os: ["Debian8.11"]
+  - name: libncurses5-dev
+  - name: libsqlite3-dev
+  - name: libssl-dev
+  - name: uuid-dev
+  - name: libffi-dev
+  - name: tk8.6-dev
+
+# barcodex/1.0.5
+- name: barcodex
+  version: 1.0.5
+  build_type: custom
+  build_args:
+    steps:
+      - build_type: pip
+        build_args:
+          package: regex
+          version: 2020.6.8
+      - build_type: pip
+        build_args:
+          package: barcodex
+          version: 1.0.5
+  depends: 
+    - name: python 
+      version: 3.6
