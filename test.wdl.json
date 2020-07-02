@@ -1,5 +1,5 @@
 {
-  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/dev",
+  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/3.0.0",
   "bcl2fastq.samples": [
       {
           "barcodes": [
@@ -12,6 +12,6 @@
   "bcl2fastq.lanes": [
       1
   ],
-  "bcl2fastq.runDirectory": "/.mounts/labs/gsi/testdata/bcl2fastq/runs/basespace/NextSeq/150114_NS500141_0187_AH2GN7AFXX",
+  "bcl2fastq.runDirectory": "/data/test_bcl2fastq",
 }
 
