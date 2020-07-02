@@ -1,0 +1,19 @@
+{
+  "bcl2fastq.lanes": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "bcl2fastq.mismatches": 1,
+  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/3.0.0",
+  "bcl2fastq.runDirectory": "/data/test_bcl2fastq_nextseq",
+  "bcl2fastq.samples": [
+    {
+      "barcodes": [
+        "ATCACGAC-ACTTAGCA"
+      ],
+      "name": "Horizon_PoolA_Rep1"
+    }
+  ]
+}
