@@ -48,31 +48,6 @@
     - name: cpio
       required_at: build
 
-# bcl2fastq/1.8.4
-- name: bcl2fastq
-  version: 1.8.4
-  build_type: custom
-  build_args:
-    prereq_args:
-      sha256: b7c802e3a24fec07a1fbb583fa273ee64cf2a0fad1830f3feb638b7232be268e
-      url: file:/build_files/bcl2fastq-1.8.4-Linux-x86_64.rpm
-    prereq_type: download
-    steps:
-      - command:
-        - /bin/bash
-        - -c
-        - "rpm2cpio download | cpio --extract --make-directories --preserve-modification-time --verbose"
-      - command:
-        - rsync
-        - -av
-        - usr/local/
-        - '{output_dir}'
-  system_depends:
-    - name: rpm2cpio
-      required_at: build
-    - name: cpio
-      required_at: build
-
 # bcl2fastq-jail/3.0.0
 - name: bcl2fastq-jail
   version: 3.0.0
