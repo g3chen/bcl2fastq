@@ -1,0 +1,22 @@
+{
+  "bcl2fastq.lanes": [
+    1
+  ],
+  "bcl2fastq.mismatches": 1,
+  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/3.0.0",
+  "bcl2fastq.process.ignoreMissingBcls": true,
+  "bcl2fastq.process.ignoreMissingFilter": true,
+  "bcl2fastq.process.ignoreMissingPositions": true,
+  "bcl2fastq.runDirectory": "/data_modules/bcl2fastq_tiny",
+  "bcl2fastq.samples": [
+    {
+      "barcodes": [
+        "AGATCGGT",
+        "CATCGTCG",
+        "GTCATATA",
+        "TCGGACAC"
+      ],
+      "name": "test_sample"
+    }
+  ]
+}
