@@ -4,7 +4,7 @@
   ],
   "bcl2fastq.mismatches": 1,
   "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/3.0.0",
-  "bcl2fastq.runDirectory": "/data/test_bcl2fastq_nextseq",
+  "bcl2fastq.runDirectory": "/data_modules/bcl2fastq_NextSeq",
   "bcl2fastq.samples": [
     {
       "barcodes": [

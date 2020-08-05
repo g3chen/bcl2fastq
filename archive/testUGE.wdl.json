@@ -3,63 +3,14 @@
     1
   ],
   "bcl2fastq.mismatches": 1,
-  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/dev",
-  "bcl2fastq.runDirectory": "/.mounts/labs/gsi/testdata/bcl2fastq/runs/basespace/HiSeq/150928_SN346_0594_AHCTWGBCXX",
+  "bcl2fastq.modules": "bcl2fastq/2.20.0.422 bcl2fastq-jail/3.0.0",
+  "bcl2fastq.runDirectory": "/.mounts/labs/gsi/testdata/bcl2fastq/runs/basespace/NextSeq/150114_NS500141_0187_AH2GN7AFXX",
   "bcl2fastq.samples": [
     {
       "barcodes": [
-        "CGATGT"
+        "ATCACGAC-ACTTAGCA"
       ],
-      "name": "NA12878_A002"
-    },
-    {
-      "barcodes": [
-        "TGACCA"
-      ],
-      "name": "NA12878_A004"
-    },
-    {
-      "barcodes": [
-        "ACAGTG"
-      ],
-      "name": "NA12878_A005"
-    },
-    {
-      "barcodes": [
-        "GCCAAT"
-      ],
-      "name": "NA12878_A006"
-    },
-    {
-      "barcodes": [
-        "CAGATC"
-      ],
-      "name": "NA12878_A007"
-    },
-    {
-      "barcodes": [
-        "CTTGTA"
-      ],
-      "name": "NA12878_A012"
-    },
-    {
-      "barcodes": [
-        "AGTCAA"
-      ],
-      "name": "NA12878_A013"
-    },
-    {
-      "barcodes": [
-        "AGTTCC"
-      ],
-      "name": "NA12878_A014"
-    },
-    {
-      "barcodes": [
-        "ATGTCA"
-      ],
-      "name": "NA12878_A015"
+      "name": "Horizon_PoolA_Rep1"
     }
   ]
 }
-
